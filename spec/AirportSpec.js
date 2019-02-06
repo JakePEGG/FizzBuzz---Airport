@@ -1,11 +1,13 @@
 describe("Airport", function() {
 
-    var airport = new Airport();
+    let airport = new Airport();
 
-    plane = jasmine.createSpy('plane');
+    let plane = jasmine.createSpy('plane');
 
     describe('it should instruct a plane to land', function() {
-        expect(airport.land(plane)).toHaveBeenCalledWith("land")
-    })
-
+        it('should land', function(){
+            airport.land(plane);
+            expect(plane).toHaveBeenCalledWith("land")
+        });
+    });
 });
